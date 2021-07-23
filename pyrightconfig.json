@@ -1,0 +1,26 @@
+{
+    "include": [
+      "src",
+      "tests"
+    ],
+
+    "reportTypeshedErrors": false,
+  
+    "executionEnvironments": [
+      {
+        "root": "src"
+      },
+      {
+        "root": "tests",
+        "extraPaths": [
+          "src"
+        ]
+      },
+      {
+        "root": "notebook",
+        "extraPaths": [
+          "src"
+        ]
+      }
+    ]
+  }

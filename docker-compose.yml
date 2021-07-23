@@ -1,0 +1,15 @@
+version: '2.3' # v2.3 is necessary for working with runtime: nvidia (v3) does not work
+
+services:
+  signlanguagetranslation:
+    build: .                
+    image: signlanguagetranslation:latest
+    container_name: signlanguagetranslation   
+    volumes:
+      - /Users/christopher/Documents/workspace/_data/PHOENIX-2014-T-release-v3:/workspace/data/PHOENIX-2014-T-release-v3/
+      - ./output:/workspace/output/
+#    runtime: nvidia # uncomment to activate nvidia-docker
+#    environment:
+#      - NVIDIA_VISIBLE_DEVICES=all
+#    shm_size: 50gb
+    command: sh run.sh
