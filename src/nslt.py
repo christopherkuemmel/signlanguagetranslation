@@ -3,7 +3,6 @@
 import argparse
 import logging
 import os
-from test import evaluate
 
 import numpy as np
 import torch
@@ -17,6 +16,7 @@ from data.transforms import Mean, Resize, ToTensor
 from models.alexnet import load_alexnet
 from models.model import AttnDecoderRNN, EncoderRNN
 from models.resnext_101_kinetics import load_resnext101_3d_kinetics
+from test import evaluate
 from train import backward, forward
 from utils.logger import create_logger
 from utils.onehotencoding import OneHotEncoding

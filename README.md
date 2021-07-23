@@ -1,22 +1,18 @@
-# Neural Sign Language Translation Pytorch
+# Neural Sign Language Translation
 
-This repository contains the implementation from the Neural Sign Language Translation [Paper](http://openaccess.thecvf.com/content_cvpr_2018/html/Camgoz_Neural_Sign_Language_CVPR_2018_paper.html) in Pytorch. 
+This repository contains implementations for Neural Sign Language Translation. 
+The code includes two approaches for dealing with the task.
 
-The code is based on the official [implementation](https://github.com/neccam/nslt) from GitHub User [neccam](https://github.com/neccam).
+1. NSLT - The first implementation is inspired by the [implementation](https://github.com/neccam/nslt) from GitHub User [neccam](https://github.com/neccam) (written in tensorflow).
+   1. ENTRYPOINT: `nslt.py`
+   2. It's based on a simple AlexNet which is used to generate the input embeddings
+   3. The main encoder-decoder network is implemented with RNNs
+2. ROSITA - The second approach is based on my own research.
+   1. ENTRYPOINT: `rosita.py`
+   2. It's based on a more complex 3D ResNext for input embeddings
+   3. The encoder-decoder part is implemented with pre-trained language models (transformers)
 
-## Table of Contents
-
-- [Neural Sign Language Translation Pytorch](#neural-sign-language-translation-pytorch)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Credits](#credits)
-  - [License](#license)
-
-## Installation
-
-## Usage
+## Example Usage
 
 **docker**
 
@@ -41,23 +37,3 @@ python src/rosita.py \
 --bpe_path=data/bpe \
 --output_dir=output/dev \
 ```
-
-## Contributing
-
-## Credits
-
-## License
-
-Copyright 2019 Christopher Kümmel
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
